@@ -44,7 +44,8 @@ class AuthenticateGraphAPI():
         self.client_id = client_id
         self.secret_value = secret_value
         self.url = f'https://login.microsoftonline.com/{self.tenant_id}/oauth2/v2.0/token'
-
+        self.access_token = None
+  
     def generate_access_token(self):
         data = {
             'grant_type': 'client_credentials',
@@ -116,10 +117,8 @@ class InteractWithGraphAPI(AuthenticateGraphAPI):
         file_url = 'https://graph.microsoft.com/v1.0/sites/nameofcompany.sharepoint.com,123,123/drives/123/items/123/listItem/fields'
         sharepoint_object.update_metadata(file_url, 'MetaDataCode', 'XXXXXXXXX')
         '''
-        endpoint = item_url
-        print(endpoint)
         data = json.dumps({field_name: field_value})
-        response = requests.patch(endpoint, headers=self.headers_json, data=data)
+        response = requests.patch(item_url, headers=self.headers_json, data=data)
         if response.status_code in [200, 204]:
             logging.debug("Metadata updated successfully.")
         else:
@@ -164,7 +163,8 @@ class InteractWithBlobs():
         self.blob_service_client = blob_service_client
         self.container = container
         self.container_client = self.blob_service_client.get_container_client(container=self.container)
-
+        self.df = None
+  
     def upload_file(self, file_name, data):
         self.container_client.upload_blob(name=file_name, data=data, overwrite=True)
 
