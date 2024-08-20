@@ -24,3 +24,8 @@
 * A portion of python code written to perform an ETL process on SharePoint files while also utilizing Azure blob storage.  This allows the code to be run on a scheduled basis by an Azure function with no local file dependencies:
 
   [<kbd> <br> SAMPLE PYTHON CODE <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/sample_part_of_python_azure_etl_process.py)
+
+# SQL
+* Some sample SQL code on generic datasets:
+  
+  [<kbd> <br> SAMPLE SQL CODE <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Sample_SQL_Code.sql)
