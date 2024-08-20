@@ -77,4 +77,4 @@ LEFT JOIN (SELECT * FROM Users WHERE role = 'driver') ud
     ON ud.users_id = t.driver_id
 WHERE 
     uc.banned = 'No' AND ud.banned = 'No'
-GROUP BY t.request_at
+GROUP BY t.request_at;
