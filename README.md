@@ -1,7 +1,11 @@
 # Power BI
 * PDF of a Power BI report showcasing various ways data can be displayed, aggregated, and analyzed.  The underlying report utilizes Python to pull yfinance data into Power Query so it can be refreshed on a daily basis. The data between pages is calculated following different methodologies to showcase various ways stock market data could be aggregated (utilizing a rolling period of trading days or month beginning/end dates).  Returns can also be calculated based on the prior period close value or current period open value depending on the business use case:
 
-  [<kbd> <br> SAMPLE POWER BI REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Power_BI/Sample_Power_BI_Stock_Market_Report.pdf)
+  [<kbd> <br> SAMPLE STOCK MARKET POWER BI REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Power_BI/Sample_Power_BI_Stock_Market_Report.pdf)
+
+* PDF of a sample marketing campaign report based on a publicly available Kaggle dataset:
+
+  [<kbd> <br> SAMPLE MARKETING POWER BI REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Power_BI/Sample_Marketing_Campaign_Report.pdf)
   
 * PDF of the first part of a Power BI Theme file created to customize Power BI reports with corporate branding, colors, and fonts:
   
