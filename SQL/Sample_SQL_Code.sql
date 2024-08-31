@@ -126,3 +126,33 @@ WHERE NOT EXISTS (SELECT 1 FROM Orders o WHERE c.id = o.customerId);
 SELECT name as Customers
 FROM Customers c
 WHERE c.id NOT IN (SELECT customerId from Orders WHERE customerId IS NOT NULL);
+
+--------------------------------------------------------------------------------------------------------
+-- Request: Write a solution to find for each date the number of different products sold and their names.
+-- The sold products names for each date should be sorted lexicographically.
+--------------------------------------------------------------------------------------------------------
+
+-- Sample data from Leetcode
+Activities =
+| sell_date  | product    |
+| ---------- | ---------- |
+| 2020-05-30 | Headphone  |
+| 2020-06-01 | Pencil     |
+| 2020-06-02 | Mask       |
+| 2020-05-30 | Basketball |
+| 2020-06-01 | Bible      |
+| 2020-06-02 | Mask       |
+| 2020-05-30 | T-Shirt    |
+        
+-- My MS SQL solution code utilizing GROUP BY
+WITH distinct_products_sold AS (
+    SELECT DISTINCT product, sell_date 
+    FROM Activities
+    )
+
+SELECT 
+    sell_date, 
+    COUNT(1) as num_distinct_products_sold, 
+    STRING_AGG(product, ', ') WITHIN GROUP (ORDER BY product ASC) as distinct_products_sold
+FROM distinct_products_sold p
+GROUP BY sell_date
