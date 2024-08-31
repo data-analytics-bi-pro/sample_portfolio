@@ -144,7 +144,7 @@ Activities =
 | 2020-06-02 | Mask       |
 | 2020-05-30 | T-Shirt    |
         
--- My MS SQL solution code utilizing GROUP BY
+-- My MS SQL solution code utilizing a CTE & GROUP BY
 WITH distinct_products_sold AS (
     SELECT DISTINCT product, sell_date 
     FROM Activities
@@ -155,4 +155,4 @@ SELECT
     COUNT(1) as num_distinct_products_sold, 
     STRING_AGG(product, ', ') WITHIN GROUP (ORDER BY product ASC) as distinct_products_sold
 FROM distinct_products_sold p
-GROUP BY sell_date
+GROUP BY sell_date;
