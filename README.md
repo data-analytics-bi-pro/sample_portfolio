@@ -12,7 +12,7 @@
   [<kbd> <br> POWER BI JSON THEME FILE <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Power_BI/Customizable_PowerBI_Theme_JSON_Code.pdf)
 
 # Excel
-* A sample Excel report showcasing the use of Excel formulas and report design methodology:
+* A sample Excel report showcasing the use of Excel formulas and report design methodology.  You will need to download the .xlsx file to view this report:
 
   [<kbd> <br> SAMPLE EXCEL REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Excel/Sample_Excel_Stock_Market_Report.xlsx)
   
