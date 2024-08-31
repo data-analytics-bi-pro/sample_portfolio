@@ -1,6 +1,7 @@
 /* Sample MS SQL Code */
-
+---------------------------------------------------------------------------
 -- Request: Pull the top three unique employee salaries for each department
+---------------------------------------------------------------------------
 
 -- Sample data from Leetcode
 Employee =
@@ -19,12 +20,11 @@ Department =
 | -- | ----- |
 | 1  | IT    |
 | 2  | Sales |
-1
 
--- My MS SQL solution code
-SELECT * FROM
-(
-    SELECT 
+
+-- My 1st MS SQL solution code using a CTE & window function
+WITH employee_data AS (
+SELECT 
         ISNULL(d.name, 'Missing Department') AS Department,
         e.name AS Employee,
         DENSE_RANK() OVER (PARTITION BY d.name ORDER BY e.salary DESC) AS "Rank",
@@ -33,10 +33,29 @@ SELECT * FROM
     FULL OUTER JOIN EMPLOYEE e
         ON e.departmentID = d.id
 )
+
+SELECT Department, Employee, Salary 
+FROM employee_data
 WHERE Rank <= 3;
 
+-- My 2nd MS SQL solution code using a subquery & window function
+SELECT ed.Department, ed.Employee, ed.Salary 
+FROM
+    (
+        SELECT 
+            ISNULL(d.name, 'Missing Department') AS Department,
+            e.name AS Employee,
+            DENSE_RANK() OVER (PARTITION BY d.name ORDER BY e.salary DESC) AS "Rank",
+            e.salary AS Salary
+        FROM DEPARTMENT d
+        FULL OUTER JOIN EMPLOYEE e
+            ON e.departmentID = d.id
+    ) ed
+WHERE Rank <= 3;
 
+-------------------------------------------------------------------------------------------------
 -- Request: Find the daily cancellation rate for unbanned users between 2013-10-01 and 2013-10-03
+-------------------------------------------------------------------------------------------------
 
 -- Sample data from Leetcode
 Trips =
@@ -77,4 +96,33 @@ LEFT JOIN (SELECT * FROM Users WHERE role = 'driver') ud
     ON ud.users_id = t.driver_id
 WHERE 
     uc.banned = 'No' AND ud.banned = 'No'
+    AND t.request_at BETWEEN '2013-10-01' AND '2013-10-03'
 GROUP BY t.request_at;
+
+---------------------------------------------------------------------------
+-- Request: Write a solution to find all customers who never order anything
+---------------------------------------------------------------------------
+
+-- Sample data from Leetcode
+Customers =
+| id | name  |
+| -- | ----- |
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
+
+| id | customerId |
+| -- | ---------- |
+| 1  | 3          |
+| 2  | 1          |
+
+-- My 1st MS SQL solution code utilizing NOT EXISTS
+SELECT name as Customers
+FROM Customers c
+WHERE NOT EXISTS (SELECT 1 FROM Orders o WHERE c.id = o.customerId);
+
+-- My 2nd MS SQL solution code utilizing NOT IN
+SELECT name as Customers
+FROM Customers c
+WHERE c.id NOT IN (SELECT customerId from Orders WHERE customerId IS NOT NULL);
