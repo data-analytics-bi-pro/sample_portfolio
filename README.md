@@ -21,7 +21,7 @@
 # Excel
 * A sample Excel report showcasing the use of Excel formulas and report design methodology. You will need to download the .xlsx file to view this report:
 
-  [<kbd> <br> SAMPLE EXCEL REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/raw/main/Excel/Sample_Excel_Stock_Market_Report.xlsx)
+  [<kbd> <br> SAMPLE EXCEL REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Excel/Sample_Excel_Stock_Market_Report.xlsx)
   
 * PDF of a sample returns & spreads Excel report:
   
