@@ -1,11 +1,11 @@
 # Power BI
 ##### PDFs of Power BI reports showcasing various ways data can be displayed, aggregated, and analyzed
 
-* Sample stock market report with returns calculated based on a rolling period of 21 trading days per month. The underlying report utilizes Python to pull yfinance data into Power Query, so it can be refreshed on a daily basis:
+* PDF of a sample stock market report with returns calculated based on a rolling period of 21 trading days per month. The underlying Power BI report utilizes Python to pull yfinance data into Power Query, so it can be refreshed on a daily basis:
 
   [<kbd> <br> SAMPLE STOCK MARKET REPORT 21 TRADING DAYS <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Power_BI/Sample_Power_BI_Stock_Market_Report_Daily.pdf)
 
-* Sample stock market report utilizing aggregated monthly data with returns calculated based on month start/end dates:
+* PDF of a sample stock market report utilizing aggregated monthly data with returns calculated based on month start/end dates:
 
   [<kbd> <br> SAMPLE STOCK MARKET REPORT MONTH END DATES <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Power_BI/Sample_Power_BI_Stock_Market_Report_Monthly.pdf)
 
@@ -23,13 +23,13 @@
 
   [<kbd> <br> SAMPLE EXCEL REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Excel/Sample_Excel_Stock_Market_Report.xlsx)
   
-* PDF of sample Excel report 1:
+* PDF of a sample returns & spreads Excel report:
   
-  [<kbd> <br> SAMPLE EXCEL REPORT 1 PDF <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Excel/Sample_Excel_Stock_Market_Report_1.pdf)
+  [<kbd> <br> SAMPLE RETURNS AND SPREADS REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Excel/Sample_Excel_Stock_Market_Returns_Spreads_Report.pdf)
   
-* PDF of sample Excel report 2:
+* PDF of a sample rolling returns Excel report:
 
-  [<kbd> <br> SAMPLE EXCEL REPORT 2 PDF <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Excel/Sample_Excel_Stock_Market_Report_2.pdf)
+  [<kbd> <br> SAMPLE ROLLING RETURNS REPORT <br> </kbd>](https://github.com/data-analytics-bi-pro/sample_portfolio/blob/main/Excel/Sample_Excel_Stock_Market_Rolling_Returns_Report.pdf)
 
 # Python
 * A portion of python code written to perform an ETL process on SharePoint files while also utilizing Azure blob storage. This allows the code to be run on a scheduled basis by an Azure function with no local file dependencies:
